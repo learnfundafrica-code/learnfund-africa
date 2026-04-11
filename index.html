@@ -1,0 +1,2111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnFund Africa - Empowering Education. Unlocking Futures.</title>
+    
+    <!-- SEO & Social Meta Tags -->
+    <meta name="description" content="Africa's first integrated financial-education ecosystem. Tuition financing, meal cards, student credit scores, and investor opportunities. Serving 10,000+ students across Africa.">
+    <meta name="keywords" content="student loans, Africa education, fintech, edtech, investment, tuition financing, LearnFund, Tanzania, East Africa">
+    <meta name="author" content="LearnFund Africa">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://learnfundafrica.com/">
+    <meta property="og:title" content="LearnFund Africa - Empowering Education. Unlocking Futures.">
+    <meta property="og:description" content="Africa's first integrated financial-education ecosystem. Tuition financing, meal cards, transport credits, and credit building for students.">
+    <meta property="og:image" content="https://i.postimg.cc/XJZv8RP1/Gemini-Generated-Image-urme86urme86urme.png">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LearnFund Africa - Empowering Education. Unlocking Futures.">
+    <meta name="twitter:description" content="Africa's first integrated financial-education ecosystem. Serving 10,000+ students across the continent.">
+    <meta name="twitter:image" content="https://i.postimg.cc/XJZv8RP1/Gemini-Generated-Image-urme86urme86urme.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/XJZv8RP1/Gemini-Generated-Image-urme86urme86urme.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #4f46e5;
+            --primary-dark: #3730a3;
+            --primary-light: #818cf8;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+            --dark: #1f2937;
+            --light: #f9fafb;
+            --gray: #6b7280;
+            --gray-light: #e5e7eb;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --dark: #f9fafb;
+            --light: #111827;
+            --white: #1f2937;
+            --gray: #d1d5db;
+            --gray-light: #374151;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            transition: var(--transition);
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 2000;
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+
+        .ctrl-btn {
+            background: none;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .ctrl-btn:hover, .ctrl-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+            transition: var(--transition);
+        }
+
+        .logo-text h1 {
+            font-size: 22px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+            font-size: 14px;
+            position: relative;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: var(--white);
+            min-width: 200px;
+            box-shadow: var(--shadow-lg);
+            border-radius: 8px;
+            padding: 10px 0;
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 10px 20px;
+            font-size: 13px;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--gray-light);
+        }
+
+        nav a:not(.nav-cta):after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:not(.nav-cta):hover:after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 10px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+            border: 2px solid var(--primary);
+        }
+
+        .nav-cta:hover {
+            background-color: var(--white);
+            color: var(--primary) !important;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: var(--white);
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 80px 30px 30px;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu li {
+            margin-bottom: 20px;
+        }
+
+        .mobile-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #fef7ff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .hero {
+            background: linear-gradient(135deg, #1e293b, #312e81);
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 0.8s ease forwards 0.3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--dark), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline-light {
+            background-color: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-outline-light:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.5s; }
+        .stat:nth-child(2) { animation-delay: 0.7s; }
+        .stat:nth-child(3) { animation-delay: 0.9s; }
+        .stat:nth-child(4) { animation-delay: 1.1s; }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .hero-visual {
+            position: relative;
+            opacity: 0;
+            transform: translateX(30px);
+            animation: slideIn 0.8s ease forwards 0.5s;
+        }
+
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .card-visual {
+            background-color: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .card-visual:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-visual:nth-child(2) {
+            position: absolute;
+            top: 30px;
+            right: -30px;
+            z-index: 1;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e0e7ff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 24px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-features li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .service-features i {
+            color: var(--secondary);
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+
+        .team-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+
+        .team-card .role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .team-card .bio {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+        /* Financial Projections */
+        .projections-table {
+            overflow-x: auto;
+            margin-top: 40px;
+        }
+
+        .projections-table table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .projections-table th,
+        .projections-table td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid var(--gray-light);
+        }
+
+        .projections-table th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        .projections-table tr:hover {
+            background-color: rgba(79, 70, 229, 0.05);
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 60px;
+            color: var(--primary-light);
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            margin-bottom: 3px;
+        }
+
+        .author-info p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        /* FAQ Section */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: var(--transition);
+        }
+
+        .faq-question:hover {
+            background-color: rgba(79, 70, 229, 0.05);
+        }
+
+        .faq-question i {
+            transition: var(--transition);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--gray);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            padding: 60px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .newsletter-form {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .newsletter-form input {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        .newsletter-form button {
+            padding: 15px 30px;
+        }
+
+        /* Partners Section */
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .partner-item {
+            background-color: var(--white);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        /* Roadmap */
+        .roadmap {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .roadmap::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--primary);
+        }
+
+        .roadmap-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 40px;
+        }
+
+        .roadmap-dot {
+            position: absolute;
+            left: 12px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            border: 3px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+        }
+
+        .roadmap-content {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .roadmap-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            background-color: var(--white);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            padding: 40px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 8px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            font-size: 14px;
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            z-index: 2000;
+            transition: transform 0.3s ease;
+        }
+
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Scroll to Top */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .scroll-to-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 40px;
+            }
+            
+            .hero-text h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns, .hero-stats {
+                justify-content: center;
+            }
+            
+            .hero-visual {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+            
+            .card-visual:nth-child(2) {
+                position: relative;
+                top: 0;
+                right: 0;
+                margin-top: 30px;
+            }
+            
+            .controls {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme & Language Controls -->
+    <div class="controls">
+        <button class="ctrl-btn" id="theme" title="Toggle Theme"><i class="fas fa-moon"></i></button>
+        <button class="ctrl-btn" id="lang" title="Language"><span style="font-weight:700;">EN</span></button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="https://i.postimg.cc/XJZv8RP1/Gemini-Generated-Image-urme86urme86urme.png" alt="LearnFund Africa Logo">
+                    <div class="logo-text">
+                        <h1>LearnFund Africa</h1>
+                        <p>Empowering Education. Unlocking Futures.</p>
+                    </div>
+                </div>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <nav class="desktop-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li class="dropdown">
+                            <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                            <div class="dropdown-content">
+                                <a href="#services">All Services</a>
+                                <a href="#tuition">Tuition Financing</a>
+                                <a href="#meal">Meal Card</a>
+                                <a href="#edustore">EduStore</a>
+                                <a href="#skillpass">SkillPass</a>
+                            </div>
+                        </li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#investors">Investors</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#apply-modal" class="nav-cta open-modal">Apply Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home" class="mobile-nav-link">Home</a></li>
+            <li><a href="#services" class="mobile-nav-link">Services</a></li>
+            <li><a href="#how-it-works" class="mobile-nav-link">How It Works</a></li>
+            <li><a href="#investors" class="mobile-nav-link">Investors</a></li>
+            <li><a href="#team" class="mobile-nav-link">Team</a></li>
+            <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
+            <li><a href="#apply-modal" class="mobile-nav-link nav-cta open-modal">Apply Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Education Made Possible. Anywhere in Africa.</h2>
+                    <p>Africa's first integrated financial-education ecosystem. We provide tuition financing, meal cards, transport credits, and credit building for students across the continent.</p>
+                    
+                    <div class="hero-btns">
+                        <a href="#apply-modal" class="btn btn-primary open-modal">Apply as Student</a>
+                        <a href="#investors" class="btn btn-secondary">Invest with Us</a>
+                        <a href="#partners" class="btn btn-secondary">Become a Partner</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">24-72h</div>
+                            <div class="stat-label">Fast Approval</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">0%</div>
+                            <div class="stat-label">Collateral Required</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Students Served</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">11</div>
+                            <div class="stat-label">Revenue Streams</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-visual">
+                    <div class="card-visual">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="card-title">Tuition Loan Approved</div>
+                        </div>
+                        <div class="card-content">
+                            James M. from University of Dar es Salaam just received TZS 850,000 for semester fees. Repayment starts in 90 days.
+                        </div>
+                        <button class="btn btn-primary" style="padding: 10px 20px; font-size: 14px;">View Dashboard</button>
+                    </div>
+                    
+                    <div class="card-visual">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="card-title">Meal Card Active</div>
+                        </div>
+                        <div class="card-content">
+                            Sarah K. has TZS 35,000 weekly meal budget. Spent TZS 28,500 this week at campus food partners.
+                        </div>
+                        <button class="btn btn-secondary" style="padding: 10px 20px; font-size: 14px;">Add Funds</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section (Expanded to 10 Services) -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Comprehensive Ecosystem</h2>
+                <p class="section-subtitle">We don't just fund tuition – we support the entire student journey with 10+ financial products that address real needs.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1: Tuition Financing -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-university"></i></div>
+                    <h3>Tuition & Registration Financing</h3>
+                    <p>Smart tuition loans and guaranteed registration funds so students never miss a semester.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Instant registration support</li>
+                        <li><i class="fas fa-check"></i> Zero collateral required</li>
+                        <li><i class="fas fa-check"></i> Flexible repayment (30-180 days)</li>
+                        <li><i class="fas fa-check"></i> Institution partnerships</li>
+                    </ul>
+                    <a href="Tuition&RegistrationFinancing.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 2: Meal Card -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>LearnFund Meal Card</h3>
+                    <p>Weekly meal credits accepted at partnered campus vendors across Africa.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Weekly allowance & top-ups</li>
+                        <li><i class="fas fa-check"></i> Food agent network</li>
+                        <li><i class="fas fa-check"></i> Emergency meal support</li>
+                        <li><i class="fas fa-check"></i> Cashback rewards</li>
+                    </ul>
+                    <a href="MealCard.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 3: EduStore -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-laptop"></i></div>
+                    <h3>EduStore Marketplace</h3>
+                    <p>Laptops, internet bundles, textbooks, and study tools on Buy Now, Pay Later.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Verified vendor network</li>
+                        <li><i class="fas fa-check"></i> Low-interest installments</li>
+                        <li><i class="fas fa-check"></i> Device insurance option</li>
+                        <li><i class="fas fa-check"></i> Student discounts</li>
+                    </ul>
+                    <a href="EduStoreMarketplace.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 4: Transport Pass -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bus"></i></div>
+                    <h3>CampusRide Transport Pass</h3>
+                    <p>Affordable transport credits for daily commutes via partnered services.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Route-based pricing</li>
+                        <li><i class="fas fa-check"></i> QR contactless payments</li>
+                        <li><i class="fas fa-check"></i> Driver integration</li>
+                        <li><i class="fas fa-check"></i> Semester travel passes</li>
+                    </ul>
+                    <a href="CampusRideTransportPass.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 5: Housing Credit -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Campus Housing Credit</h3>
+                    <p>Rent and hostel deposit financing with verified housing partners.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Deposit financing</li>
+                        <li><i class="fas fa-check"></i> Preferred partner hostels</li>
+                        <li><i class="fas fa-check"></i> Tenant repayment plans</li>
+                        <li><i class="fas fa-check"></i> Landlord guarantees</li>
+                    </ul>
+                    <a href="CampusHousingCredit.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 6: Credit Score -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Student Credit Score System</h3>
+                    <p>Africa's first student-focused credit history for post-graduation financial access.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> On-time repayment tracking</li>
+                        <li><i class="fas fa-check"></i> Score dashboard</li>
+                        <li><i class="fas fa-check"></i> Job & loan recommendations</li>
+                        <li><i class="fas fa-check"></i> Financial identity building</li>
+                    </ul>
+                    <a href="StudentCreditScoreSystem.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 7: Emergency Fund (NEW) -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-ambulance"></i></div>
+                    <h3>Emergency Fund Access</h3>
+                    <p>Quick micro-loans for medical, family, or academic emergencies when you need them most.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Approval within hours</li>
+                        <li><i class="fas fa-check"></i> Repayment in 7-60 days</li>
+                        <li><i class="fas fa-check"></i> Minimal documentation</li>
+                        <li><i class="fas fa-check"></i> 24/7 emergency support</li>
+                    </ul>
+                    <a href="EmergencyFundAccess.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 8: SkillPass (NEW) -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>LearnFund SkillPass</h3>
+                    <p>Upskilling courses in coding, design, marketing, and more with certifications that enhance employability.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Industry-recognized certifications</li>
+                        <li><i class="fas fa-check"></i> Pay-after-placement options</li>
+                        <li><i class="fas fa-check"></i> Job matching service</li>
+                        <li><i class="fas fa-check"></i> Mentor network access</li>
+                    </ul>
+                    <a href="LearnFundSkillPass.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 9: Student Wellness & Insurance (NEW) -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Student Wellness & Insurance</h3>
+                    <p>Micro-insurance for health, devices, and accidents with mental health support.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Health & accident coverage</li>
+                        <li><i class="fas fa-check"></i> Device insurance</li>
+                        <li><i class="fas fa-check"></i> Mental health check-ins</li>
+                        <li><i class="fas fa-check"></i> Emergency medical support</li>
+                    </ul>
+                    <a href="StudentWellness&Insurance.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <!-- Service 10: Institutional API Suite (NEW) -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-code"></i></div>
+                    <h3>Institutional API Suite</h3>
+                    <p>Seamless integration for universities: verification, payments, reporting, and student data management.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check"></i> Real-time student verification</li>
+                        <li><i class="fas fa-check"></i> Automated fee collection</li>
+                        <li><i class="fas fa-check"></i> Graduation tracking</li>
+                        <li><i class="fas fa-check"></i> Analytics dashboard</li>
+                    </ul>
+                    <a href="InstitutionalAPISuite.html" class="btn btn-primary" style="display: inline-block; margin-top: 15px; text-align: center; width: 100%; padding: 12px;">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How LearnFund Works</h2>
+                <p class="section-subtitle">Three simple steps to unlock educational financing and support services.</p>
+            </div>
+            
+            <div class="steps" style="display: flex; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+                <div class="step" style="flex: 1; min-width: 250px; background: var(--white); padding: 30px; border-radius: 15px; text-align: center;">
+                    <div class="step-number" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem; font-weight: bold;">1</div>
+                    <h3>Apply Online</h3>
+                    <p>Complete our digital application with your student ID, admission letter, and institution details.</p>
+                </div>
+                <div class="step" style="flex: 1; min-width: 250px; background: var(--white); padding: 30px; border-radius: 15px; text-align: center;">
+                    <div class="step-number" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem; font-weight: bold;">2</div>
+                    <h3>Get Verified & Approved</h3>
+                    <p>Our system verifies your enrollment with your institution and approves funding within 24-72 hours.</p>
+                </div>
+                <div class="step" style="flex: 1; min-width: 250px; background: var(--white); padding: 30px; border-radius: 15px; text-align: center;">
+                    <div class="step-number" style="width: 80px; height: 80px; background: linear-gradient(135deg, var(--primary), var(--secondary)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: white; font-size: 2rem; font-weight: bold;">3</div>
+                    <h3>Access Funds & Services</h3>
+                    <p>Receive tuition payment, activate your meal card, access EduStore, and start building your credit score.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Projections Section (NEW) -->
+    <section class="section" id="projections">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Financial Projections</h2>
+                <p class="section-subtitle">Our growth trajectory and impact metrics across Africa</p>
+            </div>
+            
+            <div class="projections-table">
+                <table>
+                    <thead>
+                        <tr><th>Metric</th><th>Year 1 (Pilot)</th><th>Year 3 (Scale)</th><th>Year 5 (Growth)</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Students Served</td><td>10,000</td><td>100,000</td><td>1,000,000</td></tr>
+                        <tr><td>Active Revenue Streams</td><td>5</td><td>8</td><td>11</td></tr>
+                        <tr><td>Total Revenue</td><td>$1.2M</td><td>$15M</td><td>$150M</td></tr>
+                        <tr><td>Profit Margin</td><td>35%</td><td>40%</td><td>45%</td></tr>
+                        <tr><td>Default Rate</td><td><5%</td><td><4%</td><td><3%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investors Section (Enhanced) -->
+    <section class="section" id="investors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Investor Opportunity</h2>
+                <p class="section-subtitle">Diversified student-backed portfolios with predictable returns and 11 revenue channels.</p>
+            </div>
+            
+            <div class="investor-benefits" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px;">
+                <div class="benefit-card" style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <h3><i class="fas fa-shield-alt"></i> Low-Risk Model</h3>
+                    <p>Institution-verified students, short repayment cycles (30-180 days), and automated collection systems.</p>
+                </div>
+                <div class="benefit-card" style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <h3><i class="fas fa-chart-bar"></i> High-Frequency Returns</h3>
+                    <p>Weekly/monthly repayments from meal cards and tuition loans create consistent cash flow.</p>
+                </div>
+                <div class="benefit-card" style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <h3><i class="fas fa-sitemap"></i> Diversified Exposure</h3>
+                    <p>Portfolios spread across tuition, meals, transport, and retail – not dependent on any single service.</p>
+                </div>
+                <div class="benefit-card" style="background: var(--white); padding: 30px; border-radius: 15px; border-left: 5px solid var(--secondary);">
+                    <h3><i class="fas fa-expand-arrows-alt"></i> Scalable Across Africa</h3>
+                    <p>Model proven in Tanzania, ready for East Africa expansion with minimal operational changes.</p>
+                </div>
+            </div>
+            
+            <div class="revenue-streams" style="background: linear-gradient(135deg, var(--primary), var(--primary-dark)); color: white; padding: 50px; border-radius: 20px;">
+                <h2 style="text-align: center; margin-bottom: 40px;">11 Revenue Streams</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px;">
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Loan Interest</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Service Fees</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Food Commissions</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Transport Commissions</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">EduStore Margins</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Insurance Partnerships</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Credit Score Data</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">API Subscriptions</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Course Sales</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Parent Subscriptions</div>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px; text-align: center;">Withdrawal Fees</div>
+                </div>
+                <div class="investor-cta" style="text-align: center; margin-top: 40px;">
+                    <a href="#" class="btn btn-light" style="background: white; color: var(--primary); padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: 600;">Download Investor Pack</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (NEW) -->
+    <section class="section" id="team">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Leadership Team</h2>
+                <p class="section-subtitle">Meet the visionaries behind LearnFund Africa</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">EM</div>
+                    <h3>Emmanuel Brayson Mushi</h3>
+                    <div class="role">Founder & CEO</div>
+                    <p class="bio">Visionary leader with 10+ years in fintech and education finance. Passionate about democratizing education access across Africa.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">—</div>
+                    <h3>Position Open</h3>
+                    <div class="role">Chief Financial Officer</div>
+                    <p class="bio">We're looking for a strategic financial leader to join our founding team. Interested? Apply now!</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">—</div>
+                    <h3>Position Open</h3>
+                    <div class="role">Chief Technology Officer</div>
+                    <p class="bio">Seeking a tech visionary to lead our platform development and scale our infrastructure.</p>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">—</div>
+                    <h3>Position Open</h3>
+                    <div class="role">Head of Partnerships</div>
+                    <p class="bio">Join us to build strategic relationships with institutions, vendors, and government agencies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section (NEW) -->
+    <section class="section" id="partners">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Partners</h2>
+                <p class="section-subtitle">Strategic alliances that power our ecosystem</p>
+            </div>
+            
+            <div class="partners-grid">
+                <div class="partner-item">Vodacom</div>
+                <div class="partner-item">Airtel</div>
+                <div class="partner-item">CRDB Bank</div>
+                <div class="partner-item">NMB Bank</div>
+                <div class="partner-item">AKB</div>
+                <div class="partner-item">Bakhresa Group</div>
+                <div class="partner-item">World Bank</div>
+                <div class="partner-item">UNDP</div>
+                <div class="partner-item">MasterCard Foundation</div>
+                <div class="partner-item">AFDB</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Roadmap Section (NEW) -->
+    <section class="section" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Roadmap</h2>
+                <p class="section-subtitle">The journey to transform education across Africa</p>
+            </div>
+            
+            <div class="roadmap">
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <h3>Phase 1: Foundation (Months 1-12)</h3>
+                        <p>Launch in Tanzania (Dar es Salaam, Mwanza, Arusha). Target: 10,000 students, 20 institutional partnerships, 100+ vendors.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <h3>Phase 2: East Africa Expansion (Year 2)</h3>
+                        <p>Expand to Kenya, Uganda, Rwanda. Target: 50,000 students, $5M revenue.</p>
+                    </div>
+                </div>
+                <div class="roadmap-item">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <h3>Phase 3: Continental Scale (Years 3-5)</h3>
+                        <p>Expand to 10+ African countries. Target: 1M+ students, $50M+ revenue.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (NEW) -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Success Stories</h2>
+                <p class="section-subtitle">Real stories from students who transformed their education journey</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "LearnFund made it possible for me to complete my final semester when my family couldn't afford the fees. Their flexible repayment plan was a lifesaver."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JM</div>
+                        <div class="author-info">
+                            <h4>James M.</h4>
+                            <p>University of Dar es Salaam</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "The meal card helped me focus on my studies without worrying about daily meals. I could actually concentrate in class!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SK</div>
+                        <div class="author-info">
+                            <h4>Sarah K.</h4>
+                            <p>Arusha Technical College</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Through SkillPass, I learned coding and got a job as a junior developer before graduation. Life-changing!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JO</div>
+                        <div class="author-info">
+                            <h4>John O.</h4>
+                            <p>Makerere University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (NEW) -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Everything you need to know about LearnFund Africa</p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the requirements to apply?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        You need a valid student ID, admission letter from a recognized institution, and your personal details. No collateral required!
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does approval take?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Most applications are approved within 24-72 hours after verification with your institution.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is the repayment period?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Repayment periods range from 30 to 180 days, depending on the service and amount. We offer flexible, student-friendly terms.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How does the Student Credit Score work?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Your on-time repayments build your credit history, which can help you access larger loans, better rates, and even job opportunities after graduation.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can international students apply?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Currently, we serve students enrolled in African institutions. We're expanding to more countries soon!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section (NEW) -->
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay Updated</h2>
+            <p>Subscribe to our newsletter for the latest updates, opportunities, and success stories.</p>
+            <div class="newsletter-form">
+                <input type="email" id="newsletterEmail" placeholder="Enter your email address">
+                <button class="btn btn-primary" onclick="subscribeNewsletter()">Subscribe</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Education in Africa?</h2>
+            <p>Join thousands of students, investors, and partners who are building Africa's future through accessible education financing.</p>
+            
+            <div class="cta-btns">
+                <a href="#apply-modal" class="btn btn-light open-modal">Apply as Student</a>
+                <a href="#investors" class="btn btn-outline-light">Request Investor Pack</a>
+                <a href="#partners" class="btn btn-outline-light">Become a Partner</a>
+                <a href="#team" class="btn btn-outline-light">Join Our Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div class="modal-overlay" id="apply-modal">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Apply to LearnFund Africa</h3>
+            <form id="applicationForm">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label>Institution *</label>
+                    <input type="text" id="institution" required>
+                </div>
+                <div class="form-group">
+                    <label>Program of Study *</label>
+                    <input type="text" id="program" required>
+                </div>
+                <div class="form-group">
+                    <label>Upload Student ID / Admission Letter</label>
+                    <input type="file" id="document" accept=".pdf,.jpg,.png">
+                </div>
+                <div class="form-group">
+                    <label>Service Needed *</label>
+                    <select id="service" required>
+                        <option value="">Select a service</option>
+                        <option>Tuition Financing</option>
+                        <option>Meal Card</option>
+                        <option>Transport Pass</option>
+                        <option>Housing Credit</option>
+                        <option>Emergency Fund</option>
+                        <option>SkillPass Course</option>
+                        <option>Multiple Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Additional Information</label>
+                    <textarea rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <img src="https://i.postimg.cc/XJZv8RP1/Gemini-Generated-Image-urme86urme86urme.png" alt="LearnFund Africa" style="height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1);">
+                    <p style="color: #d1d5db;">Africa's first integrated financial-education ecosystem. Empowering students, transforming futures.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>For Students</h3>
+                    <ul>
+                        <li><a href="#apply-modal" class="open-modal">Apply for Funding</a></li>
+                        <li><a href="#">Meal Card Activation</a></li>
+                        <li><a href="#">EduStore Marketplace</a></li>
+                        <li><a href="#">Check Credit Score</a></li>
+                        <li><a href="#">Emergency Fund</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>For Partners</h3>
+                    <ul>
+                        <li><a href="#">Food Agents</a></li>
+                        <li><a href="#">Transport Operators</a></li>
+                        <li><a href="#">Hostels & Landlords</a></li>
+                        <li><a href="#">Institutions</a></li>
+                        <li><a href="#">Vendors</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-envelope"></i> hello@learnfundafrica.com</p>
+                    <p><i class="fas fa-phone"></i> +255 610 222 824</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Dar es Salaam, Tanzania</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LearnFund Africa Ltd. All rights reserved. | Empowering Education. Unlocking Futures.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">Success! Your application has been submitted.</div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // Theme Toggle
+        let currentTheme = localStorage.getItem('learnfund-theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        const themeBtn = document.getElementById('theme');
+        themeBtn.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        themeBtn.onclick = () => {
+            currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            themeBtn.innerHTML = currentTheme === 'dark' ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+            localStorage.setItem('learnfund-theme', currentTheme);
+        };
+
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+
+        mobileMenuBtn.onclick = () => {
+            mobileMenu.classList.add('active');
+            mobileMenuOverlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.remove('active');
+            mobileMenuOverlay.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        mobileMenuClose.onclick = closeMobileMenu;
+        mobileMenuOverlay.onclick = closeMobileMenu;
+        document.querySelectorAll('.mobile-nav-link').forEach(link => link.onclick = closeMobileMenu);
+
+        // Modal
+        const modal = document.getElementById('apply-modal');
+        const modalClose = document.getElementById('modalClose');
+        document.querySelectorAll('.open-modal').forEach(btn => {
+            btn.onclick = (e) => {
+                e.preventDefault();
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            };
+        });
+        modalClose.onclick = () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+        modal.onclick = (e) => { if (e.target === modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; } };
+
+        // Form Submission with Toast
+        const toast = document.getElementById('toast');
+        const showToast = (message) => {
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 3000);
+        };
+
+        document.getElementById('applicationForm').onsubmit = (e) => {
+            e.preventDefault();
+            showToast('Application submitted successfully! We\'ll contact you within 24-48 hours.');
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            e.target.reset();
+        };
+
+        // Newsletter Subscription
+        window.subscribeNewsletter = () => {
+            const email = document.getElementById('newsletterEmail').value;
+            if (email) {
+                showToast('Thanks for subscribing! Check your inbox for updates.');
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                showToast('Please enter a valid email address.');
+            }
+        };
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.querySelector('.faq-question').onclick = () => {
+                item.classList.toggle('active');
+            };
+        });
+
+        // Scroll to Top
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        window.onscroll = () => {
+            scrollToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+        };
+        scrollToTopBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.onclick = function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#apply-modal' || href === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    window.scrollTo({ top: target.offsetTop - headerHeight, behavior: 'smooth' });
+                    if (window.innerWidth <= 768) closeMobileMenu();
+                }
+            };
+        });
+
+        // ========== LANGUAGE TOGGLE FUNCTIONALITY ==========
+        let currentLanguage = localStorage.getItem('learnfund-language') || 'en';
+
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('learnfund-language', lang);
+            
+            const langBtn = document.getElementById('lang');
+            if (langBtn) {
+                langBtn.innerHTML = lang === 'en' ? '<span style="font-weight:700;">EN</span>' : '<span style="font-weight:700;">SW</span>';
+            }
+            
+            const translations = {
+                en: {
+                    'nav-home': 'Home', 'nav-services': 'Services', 'nav-investors': 'Investors', 'nav-apply': 'Apply Now',
+                    'hero-title': 'Education Made Possible. Anywhere in Africa.',
+                    'hero-desc': "Africa's first integrated financial-education ecosystem. We provide tuition financing, meal cards, transport credits, and credit building for students across the continent.",
+                    'hero-btn-student': 'Apply as Student', 'hero-btn-invest': 'Invest with Us', 'hero-btn-partner': 'Become a Partner',
+                    'stat-fast': 'Fast Approval', 'stat-collateral': 'Collateral Required', 'stat-students': 'Students Served', 'stat-revenue': 'Revenue Streams',
+                    'services-title': 'Our Comprehensive Ecosystem',
+                    'services-subtitle': "We don't just fund tuition – we support the entire student journey with 10+ financial products that address real needs.",
+                    'service1-title': 'Tuition & Registration Financing', 'service1-desc': 'Smart tuition loans and guaranteed registration funds so students never miss a semester.',
+                    'service2-title': 'LearnFund Meal Card', 'service2-desc': 'Weekly meal credits accepted at partnered campus vendors across Africa.',
+                    'service3-title': 'EduStore Marketplace', 'service3-desc': 'Laptops, internet bundles, textbooks, and study tools on Buy Now, Pay Later.',
+                    'service4-title': 'CampusRide Transport Pass', 'service4-desc': 'Affordable transport credits for daily commutes via partnered services.',
+                    'service5-title': 'Campus Housing Credit', 'service5-desc': 'Rent and hostel deposit financing with verified housing partners.',
+                    'service6-title': 'Student Credit Score System', 'service6-desc': "Africa's first student-focused credit history for post-graduation financial access.",
+                    'service7-title': 'Emergency Fund Access', 'service7-desc': 'Quick micro-loans for medical, family, or academic emergencies when you need them most.',
+                    'service8-title': 'LearnFund SkillPass', 'service8-desc': 'Upskilling courses in coding, design, marketing, and more with certifications that enhance employability.',
+                    'service9-title': 'Student Wellness & Insurance', 'service9-desc': 'Micro-insurance for health, devices, and accidents with mental health support.',
+                    'service10-title': 'Institutional API Suite', 'service10-desc': 'Seamless integration for universities: verification, payments, reporting, and student data management.',
+                    'explore-btn': 'Explore', 'cta-title': 'Ready to Transform Education in Africa?',
+                    'cta-desc': 'Join thousands of students, investors, and partners who are building Africa\'s future through accessible education financing.',
+                    'footer-desc': "Africa's first integrated financial-education ecosystem. Empowering students, transforming futures.",
+                    'footer-students': 'For Students', 'footer-partners': 'For Partners', 'footer-contact': 'Contact Us'
+                },
+                sw: {
+                    'nav-home': 'Nyumbani', 'nav-services': 'Huduma', 'nav-investors': 'Wawekezaji', 'nav-apply': 'Omba Sasa',
+                    'hero-title': 'Elimu Inawezekana. Popote Afrika.',
+                    'hero-desc': 'Mfumo wa kwanza wa kifedha na elimu barani Afrika. Tunatoa ufadhili wa masomo, kadi za chakula, mikopo ya usafiri, na ujenzi wa alama ya mkopo kwa wanafunzi.',
+                    'hero-btn-student': 'Omba kama Mwanafunzi', 'hero-btn-invest': 'Weza Nasi', 'hero-btn-partner': 'Kuwa Mshirika',
+                    'stat-fast': 'Idhini ya Haraka', 'stat-collateral': 'Hakuna Dhamana', 'stat-students': 'Wanafunzi Waliohudumiwa', 'stat-revenue': 'Njia za Mapato',
+                    'services-title': 'Mfumo Wetu Kamili',
+                    'services-subtitle': 'Hatufadhili tu masomo – tunaunga mkono safari nzima ya mwanafunzi kwa bidhaa 10+ za kifedha zinazokidhi mahitaji halisi.',
+                    'service1-title': 'Ufadhili wa Masomo na Usajili', 'service1-desc': 'Mikopo mahiri ya masomo na fedha za usajili ili wanafunzi wasikose muhula.',
+                    'service2-title': 'Kadi ya Chakula LearnFund', 'service2-desc': 'Krediti za chakula za kila wiki zinazokubalika kwa wauzaji washirika chuoni.',
+                    'service3-title': 'Soko la EduStore', 'service3-desc': 'Laptops, vifurushi vya intaneti, vitabu, na vifaa vya kusoma kwa Nunua Sasa, Lipa Baadaye.',
+                    'service4-title': 'Pasipoti ya Usafiri CampusRide', 'service4-desc': 'Krediti za usafiri za bei nafuu kwa safari za kila siku.',
+                    'service5-title': 'Krediti ya Nyumba Chuoni', 'service5-desc': 'Ufadhili wa kodi na amana ya hosteli kwa washirika waliohakikishwa.',
+                    'service6-title': 'Mfumo wa Alama ya Mkopo kwa Wanafunzi', 'service6-desc': 'Historia ya kwanza ya mkopo inayolenga wanafunzi barani Afrika.',
+                    'service7-title': 'Upatikanaji wa Mfuko wa Dharura', 'service7-desc': 'Mikopo midogo ya haraka kwa dharura za kiafya, kifamilia, au za kielimu.',
+                    'service8-title': 'LearnFund SkillPass', 'service8-desc': 'Kozi za kuongeza ujuzi na vyeti vinavyotambulika kiulimwengu.',
+                    'service9-title': 'Afya na Bima ya Wanafunzi', 'service9-desc': 'Bima ndogo kwa afya, vifaa, na ajali pamoja na usaidizi wa afya ya akili.',
+                    'service10-title': 'API Suite kwa Taasisi', 'service10-desc': 'Unganishaji wa seamless kwa vyuo: uthibitishaji, malipo, taarifa, na usimamizi wa data.',
+                    'explore-btn': 'Chunguza', 'cta-title': 'Uko Tayari Kubadilisha Elimu Afrika?',
+                    'cta-desc': 'Jiunge na maelfu ya wanafunzi, wawekezaji, na washirika wanaojenga mustakabali wa Afrika kupitia ufadhili wa elimu unaopatikana.',
+                    'footer-desc': 'Mfumo wa kwanza wa kifedha na elimu barani Afrika. Kuwawezesha wanafunzi, kubadilisha mustakabali.',
+                    'footer-students': 'Kwa Wanafunzi', 'footer-partners': 'Kwa Washirika', 'footer-contact': 'Wasiliana Nasi'
+                }
+            };
+            
+            const t = translations[lang];
+            if (!t) return;
+            
+            // Update Hero Title
+            const heroTitle = document.querySelector('.hero-text h2');
+            if (heroTitle) heroTitle.textContent = t['hero-title'];
+            
+            // Update Hero Description
+            const heroDesc = document.querySelector('.hero-text p');
+            if (heroDesc) heroDesc.textContent = t['hero-desc'];
+            
+            // Update Hero Buttons
+            const heroBtns = document.querySelectorAll('.hero-btns .btn');
+            if (heroBtns[0]) heroBtns[0].textContent = t['hero-btn-student'];
+            if (heroBtns[1]) heroBtns[1].textContent = t['hero-btn-invest'];
+            if (heroBtns[2]) heroBtns[2].textContent = t['hero-btn-partner'];
+            
+            // Update Stats
+            const statLabels = document.querySelectorAll('.stat-label');
+            if (statLabels[0]) statLabels[0].textContent = t['stat-fast'];
+            if (statLabels[1]) statLabels[1].textContent = t['stat-collateral'];
+            if (statLabels[2]) statLabels[2].textContent = t['stat-students'];
+            if (statLabels[3]) statLabels[3].textContent = t['stat-revenue'];
+            
+            // Update Services Section Title
+            const servicesTitle = document.querySelector('#services .section-title');
+            if (servicesTitle) servicesTitle.textContent = t['services-title'];
+            
+            const servicesSubtitle = document.querySelector('#services .section-subtitle');
+            if (servicesSubtitle) servicesSubtitle.textContent = t['services-subtitle'];
+            
+            // Update Service Cards
+            const serviceTitles = document.querySelectorAll('.service-card h3');
+            const serviceDescs = document.querySelectorAll('.service-card > p');
+            const exploreBtns = document.querySelectorAll('.service-card .btn-primary');
+            
+            for (let i = 0; i < serviceTitles.length && i < 10; i++) {
+                const titleKey = `service${i+1}-title`;
+                const descKey = `service${i+1}-desc`;
+                if (t[titleKey]) serviceTitles[i].textContent = t[titleKey];
+                if (t[descKey]) serviceDescs[i].textContent = t[descKey];
+            }
+            
+            // Update Explore Buttons
+            exploreBtns.forEach(btn => {
+                const exploreSpan = btn.querySelector('span');
+                if (exploreSpan) {
+                    exploreSpan.textContent = t['explore-btn'];
+                } else {
+                    const btnText = btn.innerHTML;
+                    if (btnText.includes('Explore')) {
+                        btn.innerHTML = t['explore-btn'] + ' <i class="fas fa-arrow-right"></i>';
+                    }
+                }
+            });
+            
+            // Update CTA
+            const ctaTitle = document.querySelector('.cta h2');
+            if (ctaTitle) ctaTitle.textContent = t['cta-title'];
+            
+            const ctaDesc = document.querySelector('.cta p');
+            if (ctaDesc) ctaDesc.textContent = t['cta-desc'];
+            
+            // Update Footer
+            const footerDesc = document.querySelector('.footer-col p');
+            if (footerDesc) footerDesc.textContent = t['footer-desc'];
+            
+            const footerHeadings = document.querySelectorAll('.footer-col h3');
+            if (footerHeadings[0]) footerHeadings[0].textContent = t['footer-students'];
+            if (footerHeadings[1]) footerHeadings[1].textContent = t['footer-partners'];
+            if (footerHeadings[2]) footerHeadings[2].textContent = t['footer-contact'];
+        }
+        
+        // Language button click handler
+        const langBtn = document.getElementById('lang');
+        if (langBtn) {
+            langBtn.onclick = () => {
+                const newLang = currentLanguage === 'en' ? 'sw' : 'en';
+                setLanguage(newLang);
+                const msg = newLang === 'en' ? 'Language changed to English' : 'Lugha imebadilishwa kuwa Kiswahili';
+                showToast(msg);
+            };
+        }
+        
+        // Initialize language
+        setLanguage(currentLanguage);
+    </script>
+    
+</body>
+</html>
